@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This file is to spawn Katana_450_6m90a without controller to Gazebo-->
+<!--Must open another terminal: roslaunch gazebo_ros emplty_world.launch -->
+
+<launch>
+<include file="$(find katana_description)/launch/spawn_katana_urdf.launch">
+<arg name="x" default="0.0"/>
+<arg name="y" default="0.0"/>
+<arg name="z" default="0.0"/>
+
+	<arg name="urdf_robot_file" value=" $(find katana_description)/urdf/katana_450_6m90a_simple_controlbox.urdf.xacro"/>
+	<arg name="robot_name" value="katana_450_6m90a"/> 
+
+</include>
+</launch>
+

@@ -1,0 +1,33 @@
+katana_450_6m90a:
+  # Publish all joint states -----------------------------------
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50 
+  
+  # Position Controllers ---------------------------------------
+  katana_arm_m1_controller:
+    type: effort_controllers/JointPositionController
+    joint: katana_motor1_pan_joint
+    pid: {p: 10.0, i: 4.0, d: 3.0}
+
+  katana_arm_m2_controller:
+    type: effort_controllers/JointPositionController
+    joint: katana_motor2_pan_joint
+    pid: {p: 7.0, i: 3.0, d:  2.0}
+
+  katana_arm_m3_controller:
+    type: effort_controllers/JointPositionController
+    joint: katana_motor3_pan_joint
+    pid: {p: 3.0, i: 4.5, d: 1.8}
+
+  katana_arm_m4_controller:
+    type: effort_controllers/JointPositionController
+    joint: katana_motor4_pan_joint
+    pid: {p: 8.0, i: 3.0, d: 3.0}
+
+  katana_arm_m5_controller:
+    type: effort_controllers/JointPositionController
+    joint: katana_motor5_wrist_roll_joint
+    pid: {p: 1, i: 0.0, d: 0.0}
+
+

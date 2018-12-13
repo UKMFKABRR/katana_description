@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find katana_description)/config/katana_control.yaml" command="load"/>
+	<rosparam file="$(find katana_description)/config/katana_gripper_controller.yaml" command="load"/>
+  <!-- load the controllers -->
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/katana_450_6m90a" args="katana_arm_m1_controller katana_arm_m2_controller katana_arm_m3_controller katana_arm_m4_controller katana_arm_m5_controller joint_state_controller --shutdown-timeout 3"/>
+
+  <!-- convert joint states to TF transforms for rviz, etc -->
+ <!-- Robot state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/katana_450_6m90a/joint_states" />
+    <param name="publish_frequency" type="double" value="50.0" />
+    <param name="tf_prefix" type="string" value="" />
+  </node>
+
+</launch>
