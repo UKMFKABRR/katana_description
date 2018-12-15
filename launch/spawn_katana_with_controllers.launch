@@ -3,7 +3,7 @@
 <!--This file is to spawn Katana_450_6m90a with controller to Gazebo-->
 <launch>
     <!--<include file="$(find katana_description)/launch/spawn_katana.launch"/> -->
-    <include file="$(find katana_description)/launch/katana_control.launch"/>
+    <include file="$(find katana_control)/launch/katana_control.launch"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
    <arg name="world_name" value="worlds/empty.world"/>
