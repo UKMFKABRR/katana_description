@@ -2,7 +2,7 @@
 <launch>
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find katana_description)/config/katana_control.yaml" command="load"/>
-	<rosparam file="$(find katana_description)/config/katana_gripper_controller.yaml" command="load"/>
+	<rosparam file="$(find katana_control)/config/katana_gripper_controller.yaml" command="load"/>
   <!-- load the controllers -->
 
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"

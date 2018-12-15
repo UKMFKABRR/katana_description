@@ -26,6 +26,6 @@
 
    <!-- Spawn katana into Gazebo -->
   <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
-     args="-param robot_description -urdf -model katana_6m90a -z 0"/>
+     args="-param robot_description -urdf -model katana_450_6m90a -z 0"/>
 
 </launch>
